@@ -1,7 +1,11 @@
-//entry point to the backend
+//this is the entry point to the backend
 
 const express = require('express');
 const app = express();
+const connectDB = require('./config/db');
+
+//Connect Database
+connectDB();
 
 app.get('/', (req, res) => {
   res.json({ msg: 'welcome to the contactKeeper API' });
